@@ -8,6 +8,16 @@
     <title>Hi bud, its a website</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.png" type="image/png">
+
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function (OneSignal) {
+            await OneSignal.init({
+                appId: "987668a8-ae24-4ade-854c-3f9e7c8e7116",
+            });
+        });
+    </script>
 </head>
 
 <body>
