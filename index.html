@@ -15,11 +15,16 @@
     <script>
         window.OneSignalDeferred = window.OneSignalDeferred || [];
         OneSignalDeferred.push(async function (OneSignal) {
+
+            // These are staging only. Staging SDK seems to be an older or specialized version.
+            OneSignal.SERVICE_WORKER_PARAM = { scope: "/jw-notification-test-app-ghpages/" };
+            OneSignal.SERVICE_WORKER_PATH = "/jw-notification-test-app-ghpages/OneSignalSDKWorker.js"
+
             await OneSignal.init({
                 // appId: "987668a8-ae24-4ade-854c-3f9e7c8e7116", // prod
                 appId: "89c741a3-4cb3-4247-9b6f-54c2b11349e8", // staging
-                serviceWorkerParam: { scope: "/jw-notification-test-app-ghpages/" },
-                serviceWorkerPath: "/jw-notification-test-app-ghpages/OneSignalSDKWorker.js",
+                // serviceWorkerParam: { scope: "/jw-notification-test-app-ghpages/" }, // prod only
+                // serviceWorkerPath: "/jw-notification-test-app-ghpages/OneSignalSDKWorker.js", // prod only
             });
         });
     </script>
